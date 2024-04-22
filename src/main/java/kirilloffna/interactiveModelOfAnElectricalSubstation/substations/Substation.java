@@ -1,6 +1,6 @@
-package kirilloffna.powerStation.substations;
+package kirilloffna.interactiveModelOfAnElectricalSubstation.substations;
 
-import kirilloffna.powerStation.equipment.breakers.highVoltageCircuitBreaker.HighVoltageBreaker;
+import kirilloffna.interactiveModelOfAnElectricalSubstation.equipment.breakers.highVoltageCircuitBreaker.HighVoltageBreaker;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.stereotype.Repository;

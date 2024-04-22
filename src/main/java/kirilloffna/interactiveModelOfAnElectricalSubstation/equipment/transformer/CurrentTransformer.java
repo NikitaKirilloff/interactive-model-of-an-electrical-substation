@@ -1,4 +1,4 @@
-package kirilloffna.powerStation.equipment.transformer;
+package kirilloffna.interactiveModelOfAnElectricalSubstation.equipment.transformer;
 
 public class CurrentTransformer {
   private int highCurrent;

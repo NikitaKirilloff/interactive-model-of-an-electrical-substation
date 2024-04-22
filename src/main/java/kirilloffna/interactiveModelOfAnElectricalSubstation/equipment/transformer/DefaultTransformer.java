@@ -1,8 +1,8 @@
-package kirilloffna.powerStation.equipment.transformer;
+package kirilloffna.interactiveModelOfAnElectricalSubstation.equipment.transformer;
 
-import kirilloffna.powerStation.equipment.breakers.highVoltageCircuitBreaker.DefaultHighVoltageBreaker;
-import kirilloffna.powerStation.equipment.breakers.HighVoltage;
-import kirilloffna.powerStation.equipment.breakers.LowVoltage;
+import kirilloffna.interactiveModelOfAnElectricalSubstation.equipment.breakers.highVoltageCircuitBreaker.DefaultHighVoltageBreaker;
+import kirilloffna.interactiveModelOfAnElectricalSubstation.equipment.breakers.HighVoltage;
+import kirilloffna.interactiveModelOfAnElectricalSubstation.equipment.breakers.LowVoltage;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
