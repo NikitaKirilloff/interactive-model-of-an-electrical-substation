@@ -1,3 +1,5 @@
+Проект в разработке.
+
 Fast start
 1. Запустите Docker Desktop.
 2. В терминале intellij idea, поднимите контейнер командой *docker-compose up*, дождитесь запуска контейнера
