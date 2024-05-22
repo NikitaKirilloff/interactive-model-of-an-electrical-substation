@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<img src="https://sun9-38.userapi.com/impg/hDMlhs3QSJwZT9CUBw5ExUWaE8HBxlpPB7V5IQ/SbqIrDB4IxQ.jpg?size=500x284&quality=95&sign=bae8e62751f0d2cdf46976013b2c290d&type=album">
+<form th:action="@{/registration}" method="post" th:object="${user}">
+    <label for="firstname">Имя:</label>
+    <input th:field="*{firstName}" type="text" name="firstname" id="firstname"><br>
+    <label for="lastname">Фамилия:</label>
+    <input th:field="*{lastName}" type="text" name="lastname" id="lastname"><br>
+    <label for="Email">Email:</label>
+    <input th:field="*{email}" type="email" name="Email" id="Email"><br>
+    <label for="password">Пароль:</label>
+    <input th:field="*{password}" type="password" name="password" id="password"><br>
+    <!--<label for="Role">Секретное слово (для регистрации обычного пользователя, поле может оставаться
+        пустым):</label>
+    <input type="password" id="Role" name="Role"><br>
+    -->
+    <button type="submit">Зарегистрироваться</button>
+</form>
+</body>
+</html>

@@ -1,6 +1,7 @@
 server:
   port: 8090
 
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5435/db_account
@@ -16,4 +17,6 @@ spring:
         format_sql: true
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
+  thymeleaf:
+    prefix: classpath:/templates/
 

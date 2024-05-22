@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+
+        .button-container form {
+            margin-bottom: 10px;
+        }
+
+        .login-button button {
+            background-color: forestgreen;
+            color: black;
+        }
+
+        .register-button button {
+            background-color: dodgerblue;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img class="background-image" src="https://sun9-63.userapi.com/impg/UPXRGi5Y6BF4Qil4-5bZbSozBpyWx4pp_MOS6A/bUBY194QW-Y.jpg?size=720x480&quality=96&sign=9bf829a9afd40c38dcc82a7ab5844010&type=album">
+    <div th:if="${param.error}">
+        Неправильный Email или пароль.
+    </div>
+    <div th:if="${param.logout}">
+        Вы вышли из системы.
+    </div>
+    <div>
+        <h2>Интерактивная модель Электрической подстанции</h2>
+        <div class="button-container login-button">
+            <form th:action="@{/login}" method="post">
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="username" />
+                </div>
+                <div>
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" />
+                </div>
+                <button type="submit">Войти</button>
+            </form>
+        </div>
+        <div class="button-container register-button">
+            <form th:action="@{/registration}" method="get">
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

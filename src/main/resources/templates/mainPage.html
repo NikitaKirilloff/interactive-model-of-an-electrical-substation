@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TODO subtation managment</title>
+</head>
+
+<body>
+<form th:action="@{/substations/create}" method="get">
+    <input type="submit" value="Создание подстанции">
+</form>
+
+<form th:action="@{/substations/viewing}" method="get">
+    <input type="submit" value="Выбор подстанции">
+</form>
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Выйти из профиля">
+</form>
+
+</body>
+</html>

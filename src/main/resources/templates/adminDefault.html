@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Main</title>
+</head>
+<body>
+
+<form th:action="@{/account}" method="get" th:object="${users}">
+    <button type="submit">Управление аккаунтами</button>
+</form>
+
+<form th:action="@{/substations}" method="get" th:object="${users}">
+    <button type="submit">Подстанции</button>
+</form>
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Выйти из профиля">
+</form>
+
+</body>
+</html>

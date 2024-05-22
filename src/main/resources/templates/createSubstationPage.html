@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Создание подстанции</title>
+</head>
+
+<body>
+<form th:action="@{/substations}" method="get">
+    <input type="submit" value="Назад">
+</form>
+
+<h1> Создание подстанции </h1>
+<form th:action="@{/substations/create}" method="post" th:object="${substation}">
+    <label for="name">Название:</label>
+    <input th:field="*{name}" type="text" name="name" id="name"><br>
+    <label for="description">Описание:</label>
+    <input th:field="*{description}" type="text" name="description" id="description" size="100" maxlength="600"><br>
+    <label for="IKZMax">IKZMax Ток КЗ максимальный:</label>
+    <input th:field="*{IKZMax}" type="number" name="IKZMax" id="IKZMax"><br>
+    <label for="IKZMin">IKZMin Ток КЗ минимальный:</label>
+    <input th:field="*{IKZMin}" type="number" name="IKZMin" id="IKZMin"><br>
+    <label for="voltageVN">Напряжение ВН в кВ:</label>
+    <input th:field="*{voltageVN}" type="number" name="voltageVN" id="voltageVN"><br>
+    <label for="voltageNN">Напряжение НН в кВ:</label>
+    <input th:field="*{voltageNN}" type="number" name="voltageNN" id="voltageNN"><br>
+    <label for="technicalVoltage">Напряжение собственных нужд ПС в Вольтах:</label>
+    <input th:field="*{technicalVoltage}" type="number" name="technicalVoltage" id="technicalVoltage"><br>
+    <button type="submit">Создать подстанцию</button>
+</form>
+</body>
+
+</html>
