@@ -2,10 +2,34 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>TODO просмотр подстанции</title>
+    <title>Просмотр подстанции</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.min.js"></script>
+
+    <style>
+        .main-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+        .spacer {
+            width: 330px;
+        }
+        .switch-cell, .transformer-cell, .busbar-cell {
+            width: 100px;
+            height: 100px;
+        }
+        .transformer-cell {
+            height: 180px;
+        }
+        .breaker-svg, .transformer-svg, .busbar-svg {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 
 <body>
@@ -21,92 +45,136 @@
     </ul>
 </div>
 
-<div class="component" id="breaker">
+<div class="component">
     <div class="element">
-        <table class="breaker-table">
+        <table class="main-table">
+            <!-- Row for Upper Switches -->
             <tr>
-                <td class="spacer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="330" height="40" fill="transparent" viewBox="0 0 16 16"></svg>
-                </td>
-                <td>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#00bfff" class="bi bi-square"
-                         viewBox="0 0 16 16">
-                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                <td class="spacer"></td>
+                <td class="switch-cell" id="upperSwitch1"></td>
+                <td class="spacer"></td>
+                <td class="switch-cell" id="upperSwitch2"></td>
+                <td class="spacer"></td>
+                <td class="switch-cell" id="upperSwitch3"></td>
+                <td class="spacer"></td>
+            </tr>
+            <!-- Row for Upper Busbars -->
+            <tr>
+                <td class="spacer"></td>
+                <td class="busbar-cell" id="upperBusbar1"></td>
+                <td class="spacer"></td>
+                <td class="busbar-cell" id="upperBusbar2"></td>
+                <td class="spacer"></td>
+                <td class="busbar-cell" id="upperBusbar3"></td>
+                <td class="spacer"></td>
+            </tr>
+            <!-- Row for Transformers -->
+            <tr>
+                <td class="spacer"></td>
+                <td class="transformer-cell">
+                    <svg class="transformer-svg" xmlns="http://www.w3.org/2000/svg" width="100" height="180" fill="none" viewBox="0 0 120 240">
+                        <circle cx="60" cy="70" r="35" stroke="black" stroke-width="2" fill="none"/>
+                        <circle cx="60" cy="110" r="35" stroke="black" stroke-width="2" fill="none"/>
+                        <line x1="60" y1="10" x2="60" y2="35" stroke="black" stroke-width="2"/>
+                        <line x1="60" y1="145" x2="60" y2="170" stroke="black" stroke-width="2"/>
                     </svg>
                 </td>
-                <td class="spacer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="330" height="40" fill="transparent" viewBox="0 0 16 16"></svg>
-                </td>
-                <td>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#00bfff" class="bi bi-square"
-                         viewBox="0 0 16 16">
-                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
+                <td class="spacer"></td>
+                <td class="transformer-cell"></td>
+                <td class="spacer"></td>
+                <td class="transformer-cell">
+                    <svg class="transformer-svg" xmlns="http://www.w3.org/2000/svg" width="100" height="180" fill="none" viewBox="0 0 120 240">
+                        <circle cx="60" cy="70" r="35" stroke="black" stroke-width="2" fill="none"/>
+                        <circle cx="60" cy="110" r="35" stroke="black" stroke-width="2" fill="none"/>
+                        <line x1="60" y1="10" x2="60" y2="35" stroke="black" stroke-width="2"/>
+                        <line x1="60" y1="145" x2="60" y2="170" stroke="black" stroke-width="2"/>
                     </svg>
                 </td>
-                <td class="spacer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="330" height="40" fill="transparent" viewBox="0 0 16 16"></svg>
-                </td>
-                <td>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#00bfff" class="bi bi-square"
-                         viewBox="0 0 16 16">
-                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z"/>
-                    </svg>
-                </td>
+                <td class="spacer"></td>
+            </tr>
+            <!-- Row for Lower Busbars -->
+            <tr>
+                <td class="spacer"></td>
+                <td class="busbar-cell" id="lowerBusbar1"></td>
+                <td class="spacer"></td>
+                <td class="busbar-cell" id="lowerBusbar2"></td>
+                <td class="spacer"></td>
+                <td class="busbar-cell" id="lowerBusbar3"></td>
+                <td class="spacer"></td>
+            </tr>
+            <!-- Row for Lower Switches -->
+            <tr>
+                <td class="spacer"></td>
+                <td class="switch-cell" id="lowerSwitch1"></td>
+                <td class="spacer"></td>
+                <td class="switch-cell" id="lowerSwitch2"></td>
+                <td class="spacer"></td>
+                <td class="switch-cell" id="lowerSwitch3"></td>
+                <td class="spacer"></td>
             </tr>
         </table>
-        Выключатели
     </div>
 </div>
 
-<div class="component" id="transformer">
-    <div class="element">
-        <table class="transformer-table">
-            <tr>
-                <td class="spacer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="330" height="40" fill="transparent" viewBox="0 0 16 16"></svg>
-                </td>
-                <td>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                         class="bi bi-arrow-up-right-circle" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                              d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096"/>
-                    </svg>
-                </td>
-                <td class="spacer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="700" height="40" fill="transparent" viewBox="0 0 16 16"></svg>
-                </td>
-                <td>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                         class="bi bi-arrow-up-right-circle" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                              d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M5.854 10.803a.5.5 0 1 1-.708-.707L9.243 6H6.475a.5.5 0 1 1 0-1h3.975a.5.5 0 0 1 .5.5v3.975a.5.5 0 1 1-1 0V6.707l-4.096 4.096"/>
-                    </svg>
-                </td>
-            </tr>
-            <tr>
-                <td class="spacer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="330" height="40" fill="transparent" viewBox="0 0 16 16"></svg>
-                </td>
-                <td>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                         class="bi bi-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                    </svg>
-                </td>
-                <td class="spacer">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="700" height="40" fill="transparent" viewBox="0 0 16 16"></svg>
-                </td>
-                <td>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor"
-                         class="bi bi-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
-                    </svg>
-                </td>
-            </tr>
-        </table>
-        Трансформатор
-    </div>
-</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.min.js"></script>
+<script>
+    function drawSwitch(draw) {
+        const width = 50;
+        const height = 50;
+
+        const switchRect = draw.rect(50, 50).move(25, 25).fill('none').stroke({ width: 3, color: '#000' });
+
+        switchRect.click(function() {
+            if (switchRect.attr('fill') === 'none') {
+                switchRect.fill('#000');
+            } else {
+                switchRect.fill('none');
+            }
+        });
+    }
+
+    function drawBusbar(draw) {
+        draw.line(50, 0, 50, 100).stroke({ width: 2, color: '#000' });
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const drawUpperSwitch1 = SVG().addTo('#upperSwitch1').size(100, 100);
+        drawSwitch(drawUpperSwitch1);
+
+        const drawUpperSwitch2 = SVG().addTo('#upperSwitch2').size(100, 100);
+        drawSwitch(drawUpperSwitch2);
+
+        const drawUpperSwitch3 = SVG().addTo('#upperSwitch3').size(100, 100);
+        drawSwitch(drawUpperSwitch3);
+
+        const drawLowerSwitch1 = SVG().addTo('#lowerSwitch1').size(100, 100);
+        drawSwitch(drawLowerSwitch1);
+
+        const drawLowerSwitch2 = SVG().addTo('#lowerSwitch2').size(100, 100);
+        drawSwitch(drawLowerSwitch2);
+
+        const drawLowerSwitch3 = SVG().addTo('#lowerSwitch3').size(100, 100);
+        drawSwitch(drawLowerSwitch3);
+
+        const upperBusbar1 = SVG().addTo('#upperBusbar1').size(100, 100);
+        drawBusbar(upperBusbar1);
+
+        const upperBusbar2 = SVG().addTo('#upperBusbar2').size(100, 100);
+        drawBusbar(upperBusbar2);
+
+        const upperBusbar3 = SVG().addTo('#upperBusbar3').size(100, 100);
+        drawBusbar(upperBusbar3);
+
+        const lowerBusbar1 = SVG().addTo('#lowerBusbar1').size(100, 100);
+        drawBusbar(lowerBusbar1);
+
+        const lowerBusbar2 = SVG().addTo('#lowerBusbar2').size(100, 100);
+        drawBusbar(lowerBusbar2);
+
+        const lowerBusbar3 = SVG().addTo('#lowerBusbar3').size(100, 100);
+        drawBusbar(lowerBusbar3);
+    });
+</script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

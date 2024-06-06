@@ -19,6 +19,8 @@ public class AuthenticationController {
       if (authorities != null && !authorities.isEmpty()) {
         if (authorities.contains(new SimpleGrantedAuthority(Role.ROLE_ADMIN.name()))) {
           return "redirect:/admin";
+        } else if (authorities.contains(new SimpleGrantedAuthority(Role.ROLE_ENGINEER.name()))) {
+          return "redirect:/engineer";
         } else if (authorities.contains(new SimpleGrantedAuthority(Role.ROLE_USER.name()))) {
           return "redirect:/user";
         }
@@ -30,6 +32,11 @@ public class AuthenticationController {
   @GetMapping("/admin")
   public String admin() {
     return "adminDefault";
+  }
+
+  @GetMapping("/engineer")
+  public String engineer() {
+    return "redirect:/substations";
   }
 
   @GetMapping("/user")

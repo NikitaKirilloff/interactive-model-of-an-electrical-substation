@@ -8,16 +8,18 @@
 <form th:action="@{/registration}" method="post" th:object="${user}">
     <label for="firstname">Имя:</label>
     <input th:field="*{firstName}" type="text" name="firstname" id="firstname"><br>
+
     <label for="lastname">Фамилия:</label>
     <input th:field="*{lastName}" type="text" name="lastname" id="lastname"><br>
+
     <label for="Email">Email:</label>
     <input th:field="*{email}" type="email" name="Email" id="Email"><br>
+
     <label for="password">Пароль:</label>
     <input th:field="*{password}" type="password" name="password" id="password"><br>
-    <!--<label for="Role">Секретное слово (для регистрации обычного пользователя, поле может оставаться
-        пустым):</label>
-    <input type="password" id="Role" name="Role"><br>
-    -->
+
+    <label for="secretWord"> Секретное слово (поле может оставаться пустым)</label>
+    <input type="password" id="secretWord" name="secretWord"><br>
     <button type="submit">Зарегистрироваться</button>
 </form>
 </body>

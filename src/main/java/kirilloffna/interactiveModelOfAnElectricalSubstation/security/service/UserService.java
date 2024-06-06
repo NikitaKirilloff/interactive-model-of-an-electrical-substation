@@ -17,13 +17,20 @@ public class UserService{
 
   private final PasswordEncoder passwordEncoder;
 
+  public User getUserById(Long id){
+    return userRepository.getReferenceById(id);
+  }
+
   public void saveUser(User user) {
     user.setPassword(passwordEncoder.encode(user.getPassword()));
-    user.setRole(Role.ROLE_ADMIN);
     userRepository.save(user);
   }
 
   public List<User> getAllUsers() {
     return userRepository.findAll();
+  }
+
+  public void deleteUser(Long id) {
+    userRepository.deleteById(id);
   }
 }

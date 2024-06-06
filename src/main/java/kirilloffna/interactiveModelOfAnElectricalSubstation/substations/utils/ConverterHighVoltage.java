@@ -31,7 +31,7 @@ public class ConverterHighVoltage {
         return 37d;
       }
       case 110 -> {
-        return 115;
+        return 115d;
       }
     }
     return 0;

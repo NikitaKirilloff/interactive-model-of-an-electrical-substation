@@ -1,14 +1,12 @@
 package kirilloffna.interactiveModelOfAnElectricalSubstation.security.auth;
 
+import kirilloffna.interactiveModelOfAnElectricalSubstation.security.entity.Role;
 import kirilloffna.interactiveModelOfAnElectricalSubstation.security.entity.User;
 import kirilloffna.interactiveModelOfAnElectricalSubstation.security.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequiredArgsConstructor
@@ -24,7 +22,14 @@ public class RegistrationController {
   }
 
   @PostMapping()
-  public String registration(@ModelAttribute("user") User user) {
+  public String registration(@ModelAttribute("user") User user, @RequestParam("secretWord") String role) {
+    if ("ADMIN".equals(role)) {
+      user.setRole(Role.ROLE_ADMIN);
+    } else if ("ENGINEER".equals(role)) {
+      user.setRole(Role.ROLE_ENGINEER);
+    } else {
+      user.setRole(Role.ROLE_USER);
+    }
     userService.saveUser(user);
     return "redirect:/login";
   }

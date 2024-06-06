@@ -10,7 +10,7 @@
     </parent>
     <groupId>kirilloff-NA</groupId>
     <artifactId>interactive-model-of-an-electrical-substation</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.2-SNAPSHOT</version>
     <name>substation</name>
     <description>substation</description>
     <properties>

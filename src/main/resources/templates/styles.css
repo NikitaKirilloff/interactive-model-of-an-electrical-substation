@@ -1,0 +1,25 @@
+.transformer-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transformer-table {
+    border-collapse: collapse;
+}
+
+.spacer {
+    width: 1000px;
+}
+
+.breaker-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.breaker-table-table {
+    border-collapse: collapse;
+}
+
+

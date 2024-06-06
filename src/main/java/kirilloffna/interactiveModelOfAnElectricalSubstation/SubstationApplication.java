@@ -8,5 +8,4 @@ public class SubstationApplication {
   public static void main(String[] args) {
     SpringApplication.run(SubstationApplication.class, args);
   }
-
 }
